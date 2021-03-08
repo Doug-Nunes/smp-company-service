@@ -1,6 +1,5 @@
 package com.smp.company.config.security;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -19,9 +18,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	private static final String ROOT_PATTERN = "/**";
 	private static final String OAUTH2_SCOPE_WRITE = "#oauth2.hasScope('write')";
 	private static final String OAUTH2_SCOPE_READ = "#oauth2.hasScope('read')";
-
-	@Value("${spring.security.oauth2.security-enabled:true}")
-	public boolean securityEnabled;
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
